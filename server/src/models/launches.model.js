@@ -14,10 +14,13 @@ const launch = {
 };
 
 launches.set(launch.flightNumber, launch);
-
 function getAllLaunches() {
 	return Array.from(launches.values());
-}
+};
+
+function existsLaunchWithId(id) {
+	return launches.has(id);
+};
 
 function addNewLaunch(launch) {
 	latestLaunchNumber++;
@@ -27,10 +30,18 @@ function addNewLaunch(launch) {
 		upcoming: true,
 		customer: ["NASA, UKR"],
 	}));
+};
 
-}
+function abortLaunchById(id) {
+	const aborted = launches.get(id);
+	aborted.upcoming = false;
+	aborted.success = false;
+	return aborted
+};
 
 module.exports = {
+	existsLaunchWithId,
 	addNewLaunch,
 	getAllLaunches,
+	abortLaunchById,
 }
