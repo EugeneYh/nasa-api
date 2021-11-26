@@ -57,7 +57,7 @@ describe("Launches API", () => {
 				.post("/launches")
 				.send(launchDataWithoutDate)
 				.expect("Content-Type", /json/)
-				.expect(400)
+				.expect(400);
 
 			expect(response.body).toStrictEqual({
 				error: "Missed required launch property",
@@ -69,11 +69,12 @@ describe("Launches API", () => {
 				.post("/launches")
 				.send(launchDataWithInvalidDate)
 				.expect("Content-Type", /json/)
-				.expect(400)
+				.expect(400);
+			
 			expect(response.body).toStrictEqual({
 				error: "Invalid launch date"
-			})
-		})
+			});
+		});
 	});
 });
 
