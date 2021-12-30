@@ -1,7 +1,10 @@
 const http = require('http');
+
+require("dotenv").config({path: '.env'});
+
 const app = require('./app.js');
-const { connectDB } = require("../src/services/mongo");
- 
+//const { connectDB } = require("../src/services/mongo");
+const{connectDB} = require("./services/mongo")
 const { loadPlanetsData } = require("./models/planets.model");
 const { loadLaunchesData } = require("./models/launches.model");
 
@@ -21,7 +24,5 @@ async function startServer() {
 
 startServer();
 
-
-
-
-
+//fonrib-nysxip-pyXvu3
+//6PI230GgnyzT5oie - туц
