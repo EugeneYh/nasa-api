@@ -4,9 +4,9 @@ require("dotenv").config({path: '.env'});
 
 const app = require('./app.js');
 //const { connectDB } = require("../src/services/mongo");
-const{connectDB} = require("./services/mongo")
-const { loadPlanetsData } = require("./models/planets.model");
+const { connectDB } = require("./services/mongo")
 const { loadLaunchesData } = require("./models/launches.model");
+const { loadPlanetsData } = require("./models/planets.model");
 
 const PORT = process.env.PORT || 8000;
 
